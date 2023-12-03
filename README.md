@@ -1,29 +1,45 @@
-# MLCS-Lab2
+# MLCS-Lab2: Backdoor Attacks
 
-Backdoor Attacks
+## Overview
+This project is dedicated to the design of a backdoor detector for neural networks, specifically targeting BadNets. By employing a pruning defense mechanism, the detector evaluates the robustness and reliability of these networks against backdoored test data, as well as their performance on clean data.
 
-Overview
-This project focuses on designing a backdoor detector for BadNets using a pruning defense. The detector prunes the last pooling layer of a BadNet model and evaluates its performance on clean and backdoored test data.
+## Prerequisites
+- **Python Version**: 3.8 or higher.
+- **Required Libraries**: 
+  - `h5py`
+  - `numpy`
+  - `tensorflow`
+  - `keras`
+  - `sklearn`
 
-Prerequisites
-Python 3.8 or higher
-Libraries: h5py, numpy, tensorflow, keras, sklearn
-Steps to Run the Code
-Install Dependencies: Install the required libraries using pip:
+## Installation and Setup
 
-Copy code
+### Install Dependencies
+To set up your environment for running the code, install the necessary libraries using pip:
+```bash
 pip install h5py numpy tensorflow keras sklearn
-Load the Notebook: Open the Jupyter notebook ML_Lab_3.ipynb.
+```
 
-Run the Notebook: Execute each cell in sequence. Key steps include:
+### Load the Notebook
 
-Importing necessary libraries.
-Loading the BadNet model.
-Pruning the last pooling layer of the model at different levels (2%, 4%, 10%).
-Evaluating the pruned models on clean and backdoored test data.
-Saving the pruned models.
-Model Evaluation: The notebook will output the accuracy and attack success rate for each pruned model.
+Open the Jupyter notebook named ML_Lab_2.ipynb in your preferred Jupyter environment.
 
-Additional Notes
-Ensure the BadNet model file bd_net.h5 and the validation dataset are in the same directory as the notebook.
-The pruned models are saved in the models directory.
+Execution Guide
+Run the Notebook
+Follow these steps within the notebook:
+
+### Import Libraries: Start by importing all the necessary libraries.
+
+Load the Model: Load the BadNet model from the file bd_net.h5.
+Prune the Model: Implement pruning on the last pooling layer of the model at various levels (2%, 4%, 10%).
+Evaluate Models: Assess the performance of each pruned model on both clean and backdoored test data.
+Save Models: The pruned models will be saved for future reference or use.
+
+### Model Evaluation
+
+The notebook is designed to automatically output the accuracy and attack success rate for each pruned model level.
+
+### Additional Notes
+
+Ensure the presence of the BadNet model file bd_net.h5 and the necessary validation dataset in the same directory as the notebook.
+The pruned models will be stored in a directory named models.
